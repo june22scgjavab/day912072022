@@ -1,0 +1,124 @@
+
+The class name should be uppercase. 
+The variable name and method name should be in smallcase.
+
+public class Resturant {
+   private int resturantId;
+   private String resturantName;
+}
+----------------------------------------------------------------------------
+Whenever we are working in LEX , dont make use of Scanner.
+You have work with the constant values.
+
+  int roll=1;
+  String name="Rajesh";
+ 
+-----------------------------------------------------
+In the assessment we have to write the code in LEX only we cannot write it in IDE
+and then paste.
+-----------------------------------------------------------------------------------------
+In LEX while working just check the output of verify button.
+Looking at the testcases. You can make the changes in the code
+suppose they have asked you to declare a member as public but 
+you are not using the public keyword.
+------------------------------------------------------------------------------------
+Have a good hold on class writing with method writing.
+
+    Object
+	  |
+	  |
+	  |
+	Base1
+	  |
+	  |
+	  |
+   Derived1  
+   ------------------------------------------------------------------
+ Observation with Base1 and Derived1:
+ 1) We have baseDisplay method in the Parent class
+    and derivedDisplay method in the Child class only.
+ 2) display method is available in both the Base1 and derived1.
+ 3) In the display method:
+     * return type of the methods in Base and Derived are same.
+	 * method name is same.
+	 * parameter are not present.
+	So this is an example method overriding. In case of method
+    overriding:
+     * return type will be same or of Covariant type.
+     * method name will be same.
+     * number of parameter , datatype of paremeters and sequence
+       of parameters in both the methods will be same.
+4) The method in the Base or Parent class is overridden and 
+    the method in the sub class/derived class/child class is 
+    overriding.	
+	
+
+public class Base1 {
+	
+	public void displayBase() {
+		System.out.println("I am the display method of the base class");
+	}
+	
+	public void display() {   // overridden method
+		System.out.println("I am the display method in the base class");
+	}
+
+}
+
+public class Derived1 extends Base1 {
+	public void displayDerived() {
+		System.out.println("I am the display method of the derived class");
+	}
+	
+	public void display() {  // overriding display method
+		System.out.println("I am the display method in the derived class");
+	}
+}
+
+
+public class Base1Derived1Main1 {
+
+	public static void main(String[] args) {
+		Base1 base=new Base1();
+		base.displayBase();
+		base.display();
+		Derived1 derived=new Derived1();
+		derived.displayBase();
+		derived.displayDerived();
+		derived.display();
+
+	}
+
+}
+
+
+private===>default===>protected====>public
+
+A parent class reference can refer to a child class object.
+
+ public class Parent {
+ public void display(){}
+ 
+ }
+ public class Child extends Parent {
+ public void display(){}
+ public void childDisplay() {}
+ }
+ Parent parent=new Child();
+ 
+ parent.display(); // It will call the display of the Child
+ parent.childDisplay(); // Not possible
+ // Reference variable is of parent class and object is of Child class or subclass
+ 
+ Only the overridden methods can be called using the parent class reference.
+ Any new method created in the child 
+ class will not be accessible using the parent class reference. 
+
+ 
+Object
+ |
+Employee
+ |
+Educator
+ |
+Manager
